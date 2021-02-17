@@ -1,0 +1,148 @@
+<div class="content_ container">
+    <div class="row">
+        <div class="col-lg-8 col-12">
+            <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+
+                <div ngxSlickItem *ngFor="let slide of imageUrls" class="slide">
+                    <img src="{{ slide.img }}" alt="" width="100%">
+                </div>
+            </ngx-slick-carousel>
+        </div>
+        <div class="col-lg-4 col-12 icon_sport">
+            <ng-container *ngIf='tel==""||tel==null'>
+                <div class="register_area">
+                    <div class="text_title_regis">สมัครสมาชิก</div>
+                    <div class="image_regis">
+                        <img src="/assets/images/content/register_icon.png" alt="">
+                        <div class="text_phoe_regis"> เบอร์โทรศัพท์มือถือ </div>
+                        <input type="text" class="form-control input_regis" placeholder="กรุณากรอกเบอร์โทร">
+                        <input type="text" class="form-control input_regis" placeholder="กรุณากรอกรหัส OTP">
+                        <div (click)="confirm()" class="badge badge-pill badge-info btn_register">ยืนยัน</div>
+                    </div>
+                </div>
+            </ng-container>
+            <ng-container *ngIf='tel!=""&&tel!=null'>
+                <div class="row">
+                    <div class="col-12">
+                        <img [routerLink]="['/page/register']" routerLinkActive="router-link-active" class="hvr-push" style="width: 100%;height: calc( 100% - 10px );" src="/assets/images/content/register.png" alt="">
+                    </div>
+                    <div class="col-12">
+                        <img [routerLink]="['/page/deposit']" routerLinkActive="router-link-active" class="hvr-push" style="width: 100%;height: calc( 100% - 10px );" src="/assets/images/content/DEPOSIT.png" alt="">
+                    </div>
+                    <div class="col-12">
+                        <img class="hvr-push" style="width: 100%;height: calc( 100% - 10px );" src="/assets/images/content/WITHDRAW.png" alt="">
+                    </div>
+                </div>
+            </ng-container>
+
+
+        </div>
+    </div>
+
+
+    <div class="container content_area_set icon_sport">
+
+        <div class="row" style="color: white;">
+            <div [routerLink]="['/page/blog_sport']" routerLinkActive="router-link-active" class="hvr-push col-lg-3 col-md-6 col-sm-6 col-12 col sport_area">
+                <img src="/assets/images/content/sport.png" alt="">
+            </div>
+            <div [routerLink]="['/page/blog_casino']" routerLinkActive="router-link-active" class="hvr-push col-lg-3 col-md-6 col-sm-6 col-12 col sport_area">
+                <img src="/assets/images/content/LIVE_casino.png" alt="">
+            </div>
+            <div [routerLink]="['/page/blog_slot']" routerLinkActive="router-link-active" class="hvr-push col-lg-3 col-md-6 col-sm-6 col-12 col sport_area">
+                <img src="/assets/images/content/SLOT.png" alt="">
+            </div>
+            <div [routerLink]="['/page/blog_lotto']" routerLinkActive="router-link-active" class="hvr-push col-lg-3 col-md-6 col-sm-6 col-12 col sport_area">
+                <img src="/assets/images/content/LOTTO.png" alt="">
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- <app-menu></app-menu> -->
+    <!-- <div class="text_home_title">
+        &nbsp;
+    </div> -->
+
+    <ng-container *ngIf="id=='promotion'">
+        <app-promotion></app-promotion>
+    </ng-container>
+    <ng-container *ngIf="id=='barcara'">
+        <app-barcara></app-barcara>
+    </ng-container>
+    <ng-container *ngIf="id=='main'||id=='income'">
+        <app-affiliate></app-affiliate>
+    </ng-container>
+    <ng-container *ngIf="id=='contact'||id=='register'||id=='deposit'||id=='withdraw'||id=='blog'">
+        <app-page></app-page>
+    </ng-container>
+
+    <div class="row" style="color: white;float: left; width: 100%;padding-top: 20px;">
+        <div class="col-lg-12 col-md-12 col-sm-6 col-12 col sport_area how_to_regis">
+            <div class="title_howto_regis">
+                ขั้นตอนการสมัคร <label style="color:#FFF600;">UFA911TH</label>
+            </div>
+            <div class="row des_howto_regis">
+                <div class="col-12">
+                    <div class="left_side">1</div>
+                    <div class="right_side" style="border-left:1px solid #FFF600;">
+                        <div class="title_rs">
+                            สมัครสมาชิก
+                        </div>
+                        <div class="des_rs">
+                            กรุณากรอกเบอร์โทรศัพท์ของคุณให้ถูกต้อง
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12" style="margin-top:10px">
+                    <div class="left_side">2</div>
+                    <div class="right_side" style="border-left:1px solid #FFF600;">
+                        <div class="title_rs">
+                            รอรับ SMS
+                        </div>
+                        <div class="des_rs">
+                            กรอกเลข OTP ให้ถูกต้องพร้อมตั้งรหัสเข้าเล่น
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12" style="margin-top:10px">
+                    <div class="left_side">3</div>
+                    <div class="right_side" style="border-left:1px solid #FFF600;">
+                        <div class="title_rs">
+                            ใส่เลขบัญชีและชื่อบัญชี
+                        </div>
+                        <div class="des_rs">
+                            กรอกเลขบัญชีของคุณพร้อมชื่อให้ถูกต้องเข้าร่วมสนุกกับ Bonanza98 ได้ทันที
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-6 col-12 col sport_area image_howto_regis">
+            <img src="/assets/images/content/register-step.png?v=1.1" alt="">
+        </div>
+
+    </div>
+    <div class="row" style="color: white; margin-top:20px;float: left;">
+        <div class="col-lg-12 col-md-12 col-sm-6 col-12 col">
+            <img class="logo_bottom" src="/assets/images/logo/logo.png" alt="">
+        </div>
+        <div class="test_des_content">
+            เว็บไซต์ที่ให้บริการ <span style="color: #00ff15;">พนันออนไลน์</span> อันดับหนึ่ง ให้บริการ <span style="color: #34B0DE;">Ufa911th</span> แทงบอลออนไลน์ คาสิโนออนไลน์ มวยหวยไม่ผ่านเอเย่น เราให้บริการด้าน การเดิมพันแบบครบวงจร <span style="color: red">ตลอด 24 ชม. </span>            ด้วยประสบการณ์ในแบบ มืออาชีพในการให้บริการ บอลออนไลน์ ท่านจึงมั่นใจได้อย่างแน่นอนว่าเรา มั่นคง ซื่อสัตย์ จริงใจ ฝากถอน รวดเร็ว ทันใจ ภายใน 1 วินาที เรามีกิจกรรม พร้อมโปรโมชั่น เดิมพันพน้นออนไลน์ให้นึกถึง <span style="color:  #34B0DE;">Ufa911th</span>
+        </div>
+        <div class="test_des_content">
+            สำหรับนัก<span style="color: #00ff15;">พนันบอลออนไลน์</span> หลายๆ ท่านคงจะพอคุ้นหูหรือทราบกันเป็นอย่างดี ชื่อเกี่ยวกับการให้บริการคาสิโนออนไลน์ภายใต้แบรนด์ดัง อันได้แก่ <span style="color: #34B0DE;">Ufa911th </span> ยิ่งเป็นการตอกย้ำถึงคุณภาพเป็นอย่างดี
+            เพราะมีบริษัทแม่รับรองโดยตรงนักพนันจึงเชื่อถือได้ เช่นเดียวกับ งานบริการที่อบรมจากเว็บตรง ให้บริการที่เป็นมิตร ที่นี่มีบริการครบวงจร และโปรโมชั่นที่ให้ได้มากกว่า
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-6 col-12 col">
+            <img class="bank_bottom" src="/assets/images/content/bank.png" alt="">
+        </div>
+    </div>
+
+
+</div>
+
+<!-- <div _ngcontent-gyx-c3="" attr="https://lin.ee/3WytmJVY" class="qr-popup"><i _ngcontent-gyx-c3="" aria-hidden="true" class="fa fa-window-close fa-6 close-qr"></i></div> -->
